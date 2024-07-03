@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    img{
+        width: 10%;
+        aspect-ratio: 1;
+    }
+    .heding{
+        text-align: center;
+    }
+    #name{
+        display: block;
+        margin: auto;
+        height: 30px;
+        width: 100px;
+        font-size: 20px;
+        color: white;
+        background-color: cadetblue;
+        border: none;
+    }
+    #container{
+        padding-left: 100px;
+        padding-right: 100px;
+        margin-top: 30px;
+    }
+    #default{
+        display: block;
+        margin: auto;
+        margin-top: 20px;
+    }
+</style>
+<body>
+
+    <h1 class="heding">Randam Image Generator</h1>
+    <button id="name">click me</button>
+    <img  id="default" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736881_640.jpg" alt="">
+    <div id="container">
+    </div>
+</body>
+<script>
+    let array = ["https://buffer.com/library/content/images/size/w1200/2023/10/free-images.jpg",
+    "https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-1080x675.jpg",
+    "https://gratisography.com/wp-content/uploads/2024/01/gratisography-cyber-kitty-800x525.jpg",
+    "https://pixlr.com/images/index/product-image-one.webp",
+    "https://h5p.org/sites/default/files/h5p/content/1209180/images/file-6113d5f8845dc.jpeg",
+    "https://miro.medium.com/v2/resize:fit:1400/1*YMJDp-kqus7i-ktWtksNjg.jpeg",
+    "https://static.gettyimages.com/display-sets/creative-landing/images/GettyImages-1448734171.jpg",
+    "https://www.akamai.com/site/im-demo/perceptual-standard.jpg?imbypass=true",
+    "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_640.jpg",
+    "https://media.gcflearnfree.org/ctassets/topics/246/share_flower_fullsize.jpg"]
+
+
+    function myfunction(){
+        let result = Math.floor(Math.random()*array.length)
+        return array[result]
+    }
+
+    let ele = document.getElementById('name')
+    let clickbtn = ele.addEventListener('click',function(){
+        let container = document.querySelector("#container")
+
+        let image = document.createElement("img")
+        image.src = myfunction()
+        container.append(image)
+
+        
+    })
+
+
+</script>
+</html>
+
